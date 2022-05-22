@@ -15,6 +15,12 @@ Then create a repository using:
 
     cookiecutter gh:fneum/cookiecutter-project
 
+Follow the setup guide.
+
+Create a new project on Github and push the new repository.
+
+Set up [pre-commit.ci](https://pre-commit.ci/).
+
 ## Project Structure
 
 The generated repository will have the following structure:
