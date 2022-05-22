@@ -3,6 +3,19 @@ channels:
     - conda-forge
     - bioconda
 dependencies:
-    - python=3.10
-    - flake8=3.8.3
-    - snakemake-minimal=6.5.3
+    - python
+    - pip
+    
+    - pre-commit
+    - black
+
+    - snakemake-minimal
+    - graphviz
+
+    - ipython
+    - jupyter
+    - jupyterlab
+    
+    
+    # - pip:
+    #     - ...

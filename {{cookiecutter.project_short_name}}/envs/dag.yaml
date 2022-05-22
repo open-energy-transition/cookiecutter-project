@@ -1,8 +1,0 @@
-name: dag
-channels:
-    - conda-forge
-    - bioconda
-dependencies:
-    - python=3.10
-    - snakemake-minimal=6.5.3
-    - graphviz=2.50.0

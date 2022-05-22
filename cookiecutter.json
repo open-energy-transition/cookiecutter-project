@@ -1,8 +1,11 @@
 {
     "project_name": "Reproducible Research Project",
     "project_short_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
-    "author": "Your name",
-    "institute": "Your institution",
-    "short_description": "A short description of this project.",
-    "_add_cluster_infrastructure": false
+    "repository": "account/{{cookiecutter.project_short_name}}",
+    "given_name": "Your given name",
+    "surname": "Your surname",
+    "email": "Your e-mail address",
+    "orcid": "0000-0000-0000-0000",
+    "affiliation": "Department of Digital Transformation in Energy Systems, Institute of Energy Technology, Technische Universität Berlin, Fakultät III, Einsteinufer 25 (TA 8), 10587 Berlin, Germany",
+    "short_description": "A short description of this project."
 }

@@ -1,22 +1,9 @@
-![Reproduction](https://github.com/timtroendle/cookiecutter-reproducible-research/actions/workflows/reproduction.yaml/badge.svg)
+# cookiecutter-project
 
-# cookiecutter-reproducible-research
+Forked and modified from [timtroendle/cookiecutter-reproducible-research](https://github.com/timtroendle/cookiecutter-reproducible-research).
 
-This repository provides [cookiecutter](http://cookiecutter.readthedocs.io) templates for reproducible research projects. The templates do not attempt to be generic, but have a clear and opinionated focus.
-
-Projects build with these templates aim at full automation, and use `Python 3.10`, `mamba/conda`, `Git`, `Snakemake`, and `pandoc` to create a HTML report out of raw data, code, and `Markdown` text. Fork, clone, or download this repository on GitHub if you want to change any of these.
-
-The template includes a few lines of code as a demo to allow you to create a HTML report out of made-up simulation results right away. Read the `README.md` in the generated repository to see how.
-
-## Template types
-
-> default
-
-This generates the basic structure of a reproducible workflow.
-
-> cluster
-
-The cluster template extends the basic template by adding infrastructure to support running on a compute cluster.
+This repository provides [cookiecutter](http://cookiecutter.readthedocs.io) templates for reproducible research projects.
+Projects build with these templates aim at full automation, and use `Python`, `mamba/conda`, `Git`, `Snakemake`, and `Latex` to create a PDF report out of raw data, code, and text. 
 
 ## Getting Started
 
@@ -26,73 +13,65 @@ Make sure you have cookiecutter installed, otherwise install it with [conda](htt
 
 Then create a repository using:
 
-    cookiecutter gh:timtroendle/cookiecutter-reproducible-research --directory=[default/cluster]
-
-You will be asked for the following parameters:
-
-Parameter | Description
---- | ---
-`project_name` | The name of your project, used in the documentation and report.
-`project_short_name` | An abbreviation, used for environments and such. Avoid special characters and whitespace.
-`author` | Your name.
-`institute` | The name of your institute, used for report metadata.
-`short_description` | A short description of the project, used for documentation and report.
-
-The `cluster` template requires the following parameter values in addition:
-
-Parameter | Description
---- | ---
-`cluster_url` | The address of the cluster to allow syncing to and from the cluster.
-`cluster_base_dir` | The base path for the project on the cluster (default: `~/<project-short-name>`).
-`cluster_type` | The type of job scheduler used on the cluster. Currently, only LSF is supported.
+    cookiecutter gh:fneum/cookiecutter-project
 
 ## Project Structure
 
 The generated repository will have the following structure:
 
 ```
-├── config                  <- Configuration files, e.g., for your model if needed.
-│   └── default.yaml        <- Default set of configuration parameter values.
-├── data                    <- Raw input data.
-├── envs                    <- Execution environments.
-│   ├── default.yaml        <- Default execution environment.
-│   ├── report.yaml         <- Environment for compilation of the report.
-│   └── test.yaml           <- Environment for executing tests.
-├── report                  <- All files creating the final report, usually text and figures.
-│   ├── apa.csl             <- Citation style definition to be used in the report.
-│   ├── literature.yaml     <- Bibliography file for the report.
-│   ├── report.md           <- The report in Markdown.
-│   └── pandoc-metadata.yaml<- Metadata for the report.
-├── rules                   <- The place for all your Snakemake rules.
-├── scripts                 <- Scripts go in here.
-│   ├── model.py            <- Demo file.
-│   └── vis.py              <- Demo file.
-├── tests                   <- Automatic tests of the source code go in here.
-│   └── test_model.py       <- Demo file.
-├── .editorconfig           <- Editor agnostic configuration settings.
-├── .flake8                 <- Linting settings for flake8.
-├── .gitignore
-├── environment.yaml        <- A file to create an environment to execute your project in.
-├── LICENSE.md              <- MIT license description
-├── Snakefile               <- Description of all computational steps to create results.
-└── README.md
-```
 
-`cluster` templates additionally contain the following files:
-
-```
-├── config
-│   └── cluster                 <- Cluster configuration.
-│       ├── cluster-config.yaml <- A Snakemake cluster-config file.
-│       └── config.yaml         <- A set of Snakemake command-line parameters for cluster execution.
-├── envs
-│   └── shell.yaml              <- An environment for shell rules.
-├── rules
-│   └── sync.yaml               <- Snakemake rules to sync to and from the cluster.
-├── .syncignore-receive         <- Build files to ignore when receiving from the cluster.
-└── .syncignore-send            <- Local files to ignore when sending to the cluster.
+|____LICENSE.md
+|____workflow
+| |____rules
+| | |____.gitkeep
+| |____subworkflows
+| | |____.gitkeep
+| |____scripts
+| | |____dummy.py
+| |____notebooks
+| | |____.gitkeep
+|____.syncignore-receive
+|____report
+| |____report.tex
+| |____sections
+| | |____results.tex
+| | |____abstract.tex
+| | |____.gitkeep
+| | |____supplementary.tex
+| | |____introduction.tex
+| | |____discussion.tex
+| | |____conclusion.tex
+| | |____methods.tex
+| |____static
+| | |____.gitkeep
+| |____report.bib
+|____results
+| |____.gitkeep
+|____data
+| |____.gitkeep
+|____.github
+| |____workflows
+| | |____.gitkeep
+|____matplotlibrc
+|____Snakefile
+|____config
+| |____config.yaml
+|____environment.yaml
+|____.reuse
+| |____dep5
+|____CITATION.cff
+|____.syncignore-send
+|____envs
+| |____dag.yaml
+|____resources
+| |____.gitkeep
+|____.gitattributes
+|____README.md
+|____.pre-commit-config.yaml
+|____.gitignore
 ```
 
 ## License
 
-Some ideas for this cookiecutter template are taken from [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/) and [mkrapp/cookiecutter-reproducible-science](https://github.com/mkrapp/cookiecutter-reproducible-science). This template is MIT licensed itself.
+This cookiecutter template is forked and modified from[timtroendle/cookiecutter-reproducible-research](https://github.com/timtroendle/cookiecutter-reproducible-research). This template is MIT licensed itself.
