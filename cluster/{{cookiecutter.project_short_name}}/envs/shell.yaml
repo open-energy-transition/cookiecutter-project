@@ -1,5 +1,0 @@
-name: shell
-channels:
-    - conda-forge
-dependencies:
-    - rsync=3.2.3
