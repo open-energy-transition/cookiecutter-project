@@ -13,7 +13,7 @@ Make sure you have cookiecutter installed, otherwise install it with [conda](htt
 
 Then create a repository using:
 
-    cookiecutter gh:fneum/cookiecutter-project
+    cookiecutter gh:PyPSA/cookiecutter-project
 
 Follow the setup guide.
 
