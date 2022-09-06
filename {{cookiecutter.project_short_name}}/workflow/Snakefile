@@ -44,3 +44,13 @@ rule clean:
          shutil.rmtree("../resources")
          shutil.rmtree("../results")
          print("Data downloaded to data/ has not been cleaned.")
+
+        
+ rule sync:
+    params:
+        cluster=config["cluster"],
+    shell:
+        """
+        rsync -uvarh --no-g --exclude-from=.syncignore-send . {params.cluster}
+        rsync -uvarh --no-g --exclude-from=.syncignore-receive {params.cluster} .
+        """
