@@ -46,7 +46,7 @@ rule clean:
          print("Data downloaded to data/ has not been cleaned.")
 
         
- rule sync:
+rule sync:
     params:
         cluster=config["cluster"],
     shell:
