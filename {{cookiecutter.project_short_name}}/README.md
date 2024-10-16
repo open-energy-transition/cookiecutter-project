@@ -8,15 +8,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <img src="https://raw.githubusercontent.com/open-energy-transition/oet-website/main/assets/img/oet-logo-red-n-subtitle.png" alt="Open Energy Transition Logo" width="260" height="100" align="right">
 
-<!-- TO DO Add your badges here
-[![REUSE status](https://api.reuse.software/badge/github.com/open-energy-transition/[PROJECT_NAME])](https://api.reuse.software/info/github.com/open-energy-transition/[PROJECT_NAME])
-[![REUSE Compliance Check](https://github.com/open-energy-transition/[PROJECT_NAME/actions/workflows/reuse-compliance.yml/badge.svg?event=schedule)](https://github.com/open-energy-transition/[PROJECT_NAME]/actions/workflows/reuse-compliance.yml)
--->
+[![REUSE status](https://api.reuse.software/badge/github.com/{{cookiecutter.repository}})](https://api.reuse.software/info/github.com/{{cookiecutter.repository}})
+[![REUSE Compliance Check](https://github.com/{{cookiecutter.repository}}/actions/workflows/reuse-compliance.yml/badge.svg?event=schedule)](https://github.com/{{cookiecutter.repository}}/actions/workflows/reuse-compliance.yml)
 
 
 {{cookiecutter.short_description}}
 
-This repository contains the entire project supported by [Open Energy Transition (OET)](https://openenergytransition.org/), including code and report. The philosophy behind this repository is that no intermediary results are included, but all results are computed from raw data and code.
+This repository contains the entire project `{{cookiecutter.project_name}}` supported by [Open Energy Transition (OET)]<sup>*</sup>(https://openenergytransition.org/), including code and report. The philosophy behind this repository is that no intermediary results are included, but all results are computed from raw data and code.
 
 # Repository structure
 
@@ -34,18 +32,16 @@ This repository contains the entire project supported by [Open Energy Transition
 <!-- TO DO Update project URL -->
 Clone the repository including its submodules:
 
-    git clone --recurse-submodules https://github.com/open-energy-transition/[PROJECT NAME]
+    git clone --recurse-submodules https://github.com/open-energy-transition/{{cookiecutter.repository}}
 
 The new commits of the submodule can be fetched and updated using the following command:
 
     git submodule update --remote
 
-<!-- TO DO Update project name in environment file -->
 You need [mamba](https://mamba.readthedocs.io/en/latest/) to run the analysis. Using `mamba`, you can create an environment from within you can run it:
 
     mamba env create -f environment.yaml
 
-<!-- TO DO Update environment name -->
 Activate `{{cookiecutter.project_short_name}}` environment:
 
     conda activate {{cookiecutter.project_short_name}}
@@ -63,3 +59,5 @@ To generate a PDF of the dependency graph of all steps `resources/dag.pdf` run:
 ## Licenses
 
 See SPDX license identifiers and the folder `./LICENSES`.
+
+<sup>*</sup> {{cookiecutter.affiliation}}

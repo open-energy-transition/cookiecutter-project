@@ -3,7 +3,7 @@
 Forked and modified from [PyPSA/cookiecutter-project](https://github.com/PyPSA/cookiecutter-project).
 
 This repository provides [cookiecutter](http://cookiecutter.readthedocs.io) templates for reproducible projects.
-Projects build with these templates aim at full automation, and use `Python`, `mamba/conda`, `Git`, `Snakemake`, and `Latex` to create a PDF report out of raw data, code, and text. 
+Projects build with these templates aim at full automation, and use `Python`, `mamba`, `Git`, `Snakemake`, and `Latex` to create a PDF report out of raw data, code, and text. 
 
 ## Getting Started
 
