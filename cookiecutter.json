@@ -2,6 +2,9 @@
     "project_name": "Reproducible Project",
     "project_short_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "repository": "open-energy-transition/{{cookiecutter.project_short_name}}",
+    "given_name": "Your given name",
+    "surname": "Your surname",
+    "email": "surname.name@openenergytransition.org",
     "affiliation": "Open Energy Transition (g)GmbH, Königsallee 52, 95448 Bayreuth, Germany",
     "short_description": "A short description of this project."
 }
