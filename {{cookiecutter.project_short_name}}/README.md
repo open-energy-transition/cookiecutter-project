@@ -14,7 +14,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 {{cookiecutter.short_description}}
 
-This repository contains the entire project `{{cookiecutter.project_name}}` supported by [Open Energy Transition (OET)]<sup>*</sup>(https://openenergytransition.org/), including code and report. The philosophy behind this repository is that no intermediary results are included, but all results are computed from raw data and code.
+This repository contains the entire project `{{cookiecutter.project_name}}` supported by [Open Energy Transition (OET)](https://openenergytransition.org/)<sup>*</sup>, including code and report. The philosophy behind this repository is that no intermediary results are included, but all results are computed from raw data and code.
 
 # Repository structure
 
