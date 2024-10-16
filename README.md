@@ -1,23 +1,34 @@
 # cookiecutter-project
 
-Forked and modified from [timtroendle/cookiecutter-reproducible-research](https://github.com/timtroendle/cookiecutter-reproducible-research).
+Forked and modified from [PyPSA/cookiecutter-project](https://github.com/PyPSA/cookiecutter-project).
 
-This repository provides [cookiecutter](http://cookiecutter.readthedocs.io) templates for reproducible research projects.
+This repository provides [cookiecutter](http://cookiecutter.readthedocs.io) templates for reproducible projects.
 Projects build with these templates aim at full automation, and use `Python`, `mamba/conda`, `Git`, `Snakemake`, and `Latex` to create a PDF report out of raw data, code, and text. 
 
 ## Getting Started
 
-Make sure you have cookiecutter installed, otherwise install it with [conda](https://conda.io/docs/index.html):
+Make sure you have cookiecutter installed, otherwise install it with [mamba](https://mamba.readthedocs.io/en/latest/):
 
-    conda install cookiecutter -c conda-forge
+    mamba create -n cookiecutter cookiecutter -c conda-forge
+    mamba activate cookiecutter
 
 Then create a repository using:
 
-    cookiecutter gh:PyPSA/cookiecutter-project
+    cookiecutter gh:open-energy-transition/cookiecutter-project
 
 Follow the setup guide.
 
-Create a new project on Github and push the new repository.
+Once the repository is created, move into the folder.
+
+    cd [PROJECT NAME]
+
+Create a new project on GitHub and push the new repository.
+
+    git init
+    git commit -A -m "Initial commit"
+    gh repo create
+
+Follow the setup guide.
 
 Set up [pre-commit.ci](https://pre-commit.ci/).
 
