@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText:  Open Energy Transition gGmbH
+#
+# SPDX-License-Identifier: CC0-1.0
+
 font.family: sans-serif
 font.sans-serif: Ubuntu
 image.cmap: viridis
