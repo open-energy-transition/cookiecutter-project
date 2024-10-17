@@ -54,7 +54,7 @@ This will run all analysis steps to reproduce results and build the report.
 
 To generate a PDF of the dependency graph of all steps `resources/dag.pdf` run:
 
-    snakemake -c1 --use-conda -f dag
+    snakemake -c1 dag
 
 ## Licenses
 
