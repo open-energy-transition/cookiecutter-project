@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText:  Open Energy Transition gGmbH
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 configfile: "config/config.yaml"
 
@@ -11,16 +14,18 @@ rule all:
 
 rule report:
     message: "Compile report."
+    params:
+        fn="report"
     input:
         tex="report/report.tex",
         bib="report/references.bib"
     output: "report/report.pdf"
     shell:
         """
-        pdflatex {input.tex}
-        bibtex {input.bib})
-        pdflatex {input.tex}
-        pdflatex {input.tex}
+        pdflatex -output-directory report {input.tex}
+        cd report; bibtex {params.fn}; cd ..
+        pdflatex -output-directory report {input.tex}
+        pdflatex -output-directory report {input.tex}
         """
 
 
@@ -40,9 +45,12 @@ rule clean:
     message: "Remove all build results but keep downloaded data."
     run:
          import shutil
+         import os
 
-         shutil.rmtree("resources")
-         shutil.rmtree("results")
+         shutil.rmtree("resources",ignore_errors=True)
+         shutil.rmtree("results",ignore_errors=True)
+         fn = "report/report.pdf"
+         os.remove(fn) if os.path.exists(fn) else None
          print("Data downloaded to data/ has not been cleaned.")
 
         
